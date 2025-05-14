@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script src="https://cdn.amplitude.com/script/ac6a9dc272fbddd15a96074e49112638.js"></script>
+	<script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.12.1-min.js.gz"></script>
+	<script type="text/javascript" src="https://cdn.amplitude.com/script/ac6a9dc272fbddd15a96074e49112638.experiment.js"></script>
+    <script>
+	var sessionReplayTracking = window.sessionReplay.plugin({sampleRate: 1});
+        window.amplitude.add(sessionReplayTracking);
+        window.amplitude.init('ac6a9dc272fbddd15a96074e49112638', {
+            fetchRemoteConfig: true,
+            autocapture: {
+		    attribution: true,
+		    pageViews: true,
+		    sessions: true,
+		    fileDownload: false,
+		    formInteractions: false,
+		    elementInteractions: false
+	    },
+        });
+	    const experiment = Experiment.initializeWithAmplitudeAnalytics('client-WzQxthqCE1M29epwP3jvD9krqh5gWRfn');
+    </script>
+	
+    <link rel="shortcut icon" type="x-icon" href="Train-IT logo(1).png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Train-IT</title>
+    <link rel="stylesheet" href="trainIT.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/914b751213.js" crossorigin="anonymous"></script>
+</head>
+	
+<body>
+	<section class="header">
+	<nav>
+		<a href="/Users/giuliano.giannini/Desktop/Projects/Training Azienda/trainingorg.html" id="logo"><img src="Train-IT logo(1).png" alt="Logo Azienda"></a>
+		<div class="nav-links">
+                <ul>
+                    <li><a href="#home" id="homepage">Home</a></li>
+                    <li><a href="#servizi" id="services">Services</a></li>
+                    <li><a href="#corsi" id="courses">Courses</a></li>
+                    <li><a href="#chi-siamo" id="about">About</a></li>
+                    <li><a href="#contatti" id="contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="text-box">
+        	<h1>Hire your tailored Technical Training services</h1>
+        	<h2>Adopting new technology is as vital to the business as it is scary for your employees. Fear no more and leverage highly tailored Technical Training to increase adoption from the get go.</h2>
+        	<br>
+        	<h2>Take action now and find out how we help businesses in an ever-changing Tech world keep their employees up to date with their latest software acquisitions.</h2>
+        	<span id="hero-hand" style="display: none;">👉   </span><a href="#home" class="hero-btn" id="hero-btnn">Explore our services! </a><span id="hero-hand2" style="display: none;">  👈</span>
+        </div>
+	</section>
+	<section class="servizi">
+	<div>
+
+	</div>
+	</section>
+<script type="text/javascript">
+    // Generalized function for navigation button clicks
+    function logNavButtonClick(buttonName) {
+        amplitude.track('Nav Button Clicked', {
+            button_name: buttonName,
+            source: "homepage"
+        });
+    }
+
+    // Here you can find event listeners for navigation buttons
+    document.getElementById('homepage').addEventListener('click', () => logNavButtonClick("home"));
+    document.getElementById('services').addEventListener('click', () => logNavButtonClick("services"));
+    document.getElementById('courses').addEventListener('click', () => logNavButtonClick("courses"));
+    document.getElementById('about').addEventListener('click', () => logNavButtonClick("about"));
+    document.getElementById('contacts').addEventListener('click', () => logNavButtonClick("contacts"));
+
+    // Additionally, I have a hero button so I need to add an event listener for that as well
+    document.getElementById('hero-btnn').addEventListener('click', () => {
+        amplitude.track('Explore Services Button Clicked', {
+            button_name: "hero_btn",
+            source: "homepage"
+        });
+    });
+</script>
+</body>
+</html>
